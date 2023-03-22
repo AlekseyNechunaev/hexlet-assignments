@@ -24,6 +24,7 @@ public class MessageSender {
             LOGGER.info("message has been sent successfully");
         } catch (Exception e) {
             LOGGER.error("message has not been sent", e);
+            throw new RuntimeException(e);
         }
     }
 }

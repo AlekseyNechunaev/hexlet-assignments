@@ -22,6 +22,7 @@ public class QueueListener {
             messages.add(message);
         } catch (Exception e) {
             LOGGER.error("couldn't read the message", e);
+            throw new RuntimeException(e);
         }
     }
     public List<String> getAllMessages() {
