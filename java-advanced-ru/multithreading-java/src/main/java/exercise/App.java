@@ -8,10 +8,6 @@ import java.util.logging.Level;
 class App {
     private static final Logger LOGGER = Logger.getLogger("AppLogger");
 
-    public static void main(String[] args) {
-        System.out.println(getMinMax(new int[]{1, 2, 3, 4, 5}));
-    }
-
     public static Map<String, Integer> getMinMax(int[] array) {
         MaxThread maxThread = new MaxThread(array);
         MinThread minThread = new MinThread(array);
