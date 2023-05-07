@@ -16,14 +16,16 @@ class App {
         MaxThread maxThread = new MaxThread(array);
         MinThread minThread = new MinThread(array);
         maxThread.start();
+        LOGGER.info("Thread " + maxThread.getName() + " started");
         minThread.start();
-        LOGGER.info("Thread " + Thread.currentThread().getName() + " started");
+        LOGGER.info("Thread " + minThread.getName() + " started");
         try {
             maxThread.join();
+            LOGGER.info("Thread " + maxThread.getName() + " finished");
             minThread.join();
-            LOGGER.info("Thread " + Thread.currentThread().getName() + " finished");
+            LOGGER.info("Thread " + minThread.getName() + " finished");
         } catch (InterruptedException e) {
-            LOGGER.log(Level.FINE, e.getMessage());
+            LOGGER.log(Level.INFO, e.getMessage());
             throw new RuntimeException(e);
         }
         return Map.of(
