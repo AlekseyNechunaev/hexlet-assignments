@@ -1,7 +1,5 @@
 package exercise;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
 
 class App {
